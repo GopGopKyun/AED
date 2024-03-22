@@ -1,0 +1,37 @@
+//Lista 1 
+//22/03
+//Gabriel de Oliveira Pellegrini Louzada
+#include <stdio.h>
+
+
+int ** criaMatriz(int m, int n)
+{
+    
+    
+    
+}
+int main()
+{
+    int escolha;
+    
+    printf("1) Criar uma matriz\n2) Ler elementos da matriz\n3) Soma dos elementos da matriz\n4) Retornar elementos de determinada matriz\n5) Sair\nInserir comando:");
+    scanf("%d", &escolha);
+    
+    switch(escolha){
+        case 1:
+            criaMatriz;
+            break;
+        case 2:
+            leiaMatriz;
+            break;
+        case 3:
+            somaMatriz;
+            break;
+        case 4:
+            colunaMat;
+            break;
+        case 5:
+        return 0;
+    }
+    return 0;
+}
