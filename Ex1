@@ -6,8 +6,16 @@
 
 int ** criaMatriz(int m, int n)
 {
-    
-    
+    int mat[2][3];
+    for(m=0;m<3;m++){
+        for(n=0;n<2;n++){
+            printf("Insira o numero da posicao [%d][%d] da matriz: ", i+1, j+1);
+            scanf("%d", &mat[i][j]);
+        }
+    }
+}
+void leiaMatriz(int **mat, int m, int n) 
+{
     
 }
 int main()
@@ -28,7 +36,7 @@ int main()
             somaMatriz;
             break;
         case 4:
-            colunaMat;
+            colunaMat;  
             break;
         case 5:
         return 0;
