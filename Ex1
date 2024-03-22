@@ -3,19 +3,42 @@
 //Gabriel de Oliveira Pellegrini Louzada
 #include <stdio.h>
 
+int **matriz = NULL;
+int *vetor = NULL;
+
 
 int ** criaMatriz(int m, int n)
 {
-    int mat[2][3];
-    for(m=0;m<3;m++){
-        for(n=0;n<2;n++){
-            printf("Insira o numero da posicao [%d][%d] da matriz: ", i+1, j+1);
-            scanf("%d", &mat[i][j]);
-        }
-    }
+    printf("Insira a quantidade de linhas que desejas na sua matriz: ");
+    scanf("%d", &m);
+    printf("Insira a quantidade de colunas que desejas na sua matriz: ");
+    scanf("%d", &n);
 }
 void leiaMatriz(int **mat, int m, int n) 
 {
+    int i, j;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+            printf("Insira o numero da posicao [%d][%d] da matriz: ", i+1, j+1);
+            scanf("%d", &**mat);
+        }
+    }
+} 
+int somaMatriz(int **mat, int m, int n)
+{
+    int soma, i, j;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+        soma += mat[i][j];    
+        }
+    }
+    printf("O resultado da soma sera: %d", soma);
+}
+int * colunaMat(int **mat, int m, int n, int ncoluna)
+{
+    
+    
+    
     
 }
 int main()
@@ -23,8 +46,9 @@ int main()
     int escolha;
     
     printf("1) Criar uma matriz\n2) Ler elementos da matriz\n3) Soma dos elementos da matriz\n4) Retornar elementos de determinada matriz\n5) Sair\nInserir comando:");
-    scanf("%d", &escolha);
+    scanf("%c", escolha);
     
+    while(escolha!=5){
     switch(escolha){
         case 1:
             criaMatriz;
@@ -38,8 +62,7 @@ int main()
         case 4:
             colunaMat;  
             break;
-        case 5:
-        return 0;
+    }
     }
     return 0;
 }
