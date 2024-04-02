@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+enum genero{rock=1, samba, pop, reggae, metal, outro}
+
+struct bandas{
+    char nome[30];
+    enum genero tipo;
+    int ranking;
+    int integrantes;
+}bands;
+
+void menu();
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}
+
+void menu(){
+    
+    int escolha=0;
+    while(escolha!=4){
+        printf("1: Ver ranking \n2: Ver generos \n3: Ver banda \n4: Sair\nInsira o desejado:");
+        scanf("%d", &escolha)
+        switch(escolha){
+            case 1:
+                algo
+                break;
+            case 2:
+                algo
+                break:
+            case 3: 
+                algo
+                break;
+            case 4:
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
+
+
