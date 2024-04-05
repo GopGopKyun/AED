@@ -1,22 +1,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-enum genero{rock=1, samba, pop, reggae, metal, outro}
+enum genero{rock=1, samba, pop, reggae, metal, outro};
 
 struct bandas{
     char nome[30];
     enum genero tipo;
     int ranking;
     int integrantes;
-}bands;
+};
 
-void menu();
+void menu(struct *bands);
+void ranks(struct *bands);
+void genre(struct *bands);
+void name(struct *bands);
 
 int main()
 {
-    printf("Hello World");
+    struct bandas bands[5];
+    for (int i=0; i<5;i++){
+        
+        printf("Insira o nome da banda: ");
+        scanf("%s", bands[i].nome);
+        printf("1) Rock 2) Samba 3) Pop 4) Reggae 5) Metal 6) Outro\nInsira o tipo musical de sua banda: ");
+        scanf("%d", &bands[i].tipo);
+        printf("Insira o numero de integrantes da banda: ");
+        scanf("%d", &bands[i].integrantes);
+        printf("Insira a posicao que esta banda esta no seu top 5: ");
+        scanf("%d", &bands[i].ranking);
+        printf("Banda: %s Tipo musical: %s Numero de integrantes: %d Posicao em seu top 5: %d\n", bands[i].nome, bands[i].tipo, bands[i].integrantes, bands[i].ranking);
+    }
+    menu();
+}
 
-    return 0;
+void ranks(struct *bands){
+
+    int a, i;
+    printf("Insira o numero de 1 a 5 que deseja ver de seu ranking: ");
+    scanf("%d", &a);
+    for(i=0;i<5;i++){
+    if(a>5){
+        printf("Erro! Numero maior que 5.");
+    }
+    if(bands[i].ranking==a){
+        printf("\n-----------------------------------------------\n")
+        printf("A banda no seu top %d: \n", bands[i].ranking);
+        printf("Nome: %s\n", bands[i].nome);
+        printf("Genero: %s\n", bands[i].tipo);
+        printf("Nr de integrantes: %d", bands[i].integrantes);
+        printf("\n-----------------------------------------------\n")
+    }
+    }
+    menu();
+}
+
+void genre(struct *bands){
+    
+    int a, b, i;
+    printf("1) Rock 2) Samba 3) Pop 4) Reggae 5) Metal 6) Outro\nInsira um tipo musical:");
+    scanf("%d", &a);
+    for(i=0;i<5;i++){
+        b++
+        if(bands[i].tipo==a){
+            printf("A banda %s corresponde a este tipo musical.\n");
+            
+        }
+    }
+    if(b==5){
+        printf("Nenhuma banda do seu top 5 tem esse tipo musical.\n");
+    }
+    menu();
+}
+
+void name(struct *bands){
+    
+    char a[50];
+    printf("Insira o nome de uma banda: ");
+    scanf("%s", a);
+    for (int i=0; i<5;i++){
+        if (strcmp(a, bands[i].nome)==0){
+            printf("Lugar dessa banda no seu top 5: %d", bands[i].ranking);
+            menu();
+        }
+    }
+    printf("Essa banda nao esta no seu top 5.\n");
+    menu();
+    
 }
 
 void menu(){
@@ -24,16 +93,16 @@ void menu(){
     int escolha=0;
     while(escolha!=4){
         printf("1: Ver ranking \n2: Ver generos \n3: Ver banda \n4: Sair\nInsira o desejado:");
-        scanf("%d", &escolha)
+        scanf("%d", &escolha);
         switch(escolha){
             case 1:
-                algo
+                ranks(struct bands);
                 break;
             case 2:
-                algo
+                genre(struct bands);
                 break:
             case 3: 
-                algo
+                name(struct bands);
                 break;
             case 4:
             break;
@@ -41,8 +110,3 @@ void menu(){
     }
     return 0;
 }
-
-
-
-
-
