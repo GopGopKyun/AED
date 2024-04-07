@@ -44,6 +44,7 @@ void ranks(struct bandas *bandas){
     for(i=0;i<5;i++){
     if(a>5){
         printf("Erro! Numero maior que 5.");
+        menu(bandas);
     }
     if(bandas[i].ranking==a){
         printf("\n-----------------------------------------------\n");
@@ -52,9 +53,9 @@ void ranks(struct bandas *bandas){
         printf("Genero: %s\n", bandas[i].tipo);
         printf("Nr de integrantes: %d", bandas[i].integrantes);
         printf("\n-----------------------------------------------\n");
+        menu(bandas);
     }
     }
-    menu(bandas);
 }
 
 void genre(struct bandas *bandas){
